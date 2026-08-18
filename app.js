@@ -1,7 +1,8 @@
-const validator = require('validator');
-const getNotes = require('./notes');
+import chalk from 'chalk';
+import { getNotes } from './notes.js';
 
 const msg = getNotes();
 console.log(msg);
 
-console.log(validator.isURL('https/mead.io'));
+const successMsg = chalk.green.bold('Success!');
+console.log(successMsg);
