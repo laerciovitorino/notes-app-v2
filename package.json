@@ -1,0 +1,23 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/laerciovitorino/notes-app-v2#readme",
+  "bugs": {
+    "url": "https://github.com/laerciovitorino/notes-app-v2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laerciovitorino/notes-app-v2.git"
+  },
+  "license": "ISC",
+  "author": "Laércio AVM",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "validator": "^13.15.35"
+  }
+}
