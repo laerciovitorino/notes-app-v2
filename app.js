@@ -4,13 +4,26 @@ import { hideBin } from 'yargs/helpers';
 import { getNotes } from './notes.js';
 
 yargs()
-  .command(
-    'add',
-    'Add a new note',
-    function (yargs) {
-      console.log('Adding a new note!');
+  .command({
+    command: 'add',
+    describe: 'Add a new note',
+    builder: {
+      title: {
+        describe: 'Note title',
+        demandOption: true,
+        type: 'string'
+      },
+      body: {
+        describe: 'Note body',
+        demandOption: true,
+        type: 'string'
+      }
+    },
+    handler: function (argv) {
+      console.log('Title: ', argv.title);
+      console.log('Boddy: ', argv.body);
     }
-  )
+  })
   .command(
     'remove',
     'Remove a note',
