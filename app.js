@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { getNotes } from './notes.js';
+import { addNote, getNotes } from './notes.js';
 
 yargs()
   .command({
@@ -20,8 +20,7 @@ yargs()
       }
     },
     handler: function (argv) {
-      console.log('Title: ', argv.title);
-      console.log('Boddy: ', argv.body);
+      addNote(argv.title, argv.body)
     }
   })
   .command(
