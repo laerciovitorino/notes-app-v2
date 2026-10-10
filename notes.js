@@ -1,4 +1,5 @@
 import fs from 'fs';
+import chalk from 'chalk';
 
 export const getNotes = function() {
   return "Your notes..."
@@ -15,9 +16,21 @@ export const addNote = function (title, body) {
     });
 
     saveNotes(notes);
-    console.log("New note added!");
+    console.log(chalk.bgGreen("New note added!"));
   } else {
-    console.log("Note title taken!");
+    console.log(chalk.bgRed("Note title taken!"));
+  }
+}
+
+export const removeNote = function (title) {
+  const notes = loadNotes();
+  const notesToKeep = notes.filter((note) => note.title !== title);
+  
+  if (notes.length > notesToKeep.length) {
+    console.log(chalk.bgGreen("Note removed!"));
+    saveNotes(notesToKeep);
+  } else {
+    console.log(chalk.bgRed("No note found!"));
   }
 }
 
@@ -35,3 +48,4 @@ const loadNotes = function () {
     return [];
   }
 }
+
