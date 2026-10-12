@@ -19,7 +19,7 @@ yargs()
         type: 'string'
       }
     },
-    handler: function (argv) {
+    handler(argv) {
       addNote(argv.title, argv.body)
     }
   })
@@ -33,22 +33,22 @@ yargs()
         type: 'string'
       }
     },
-    handler: function (argv) {
+    handler(argv) {
       removeNote(argv.title)
     }
   })
-  .command(
-    'list',
-    'List your notes',
-    function (yargs) {
+  .command({
+    command: 'list',
+    describe: 'List your notes',
+    handler(argv) {
       console.log('Listing out all notes');
     }
-  )
-  .command(
-    'read',
-    'Read a note',
-    function (yargs) {
+  })
+  .command({
+    command: 'read',
+    describe: 'Read a note',
+    handler(argv) {
       console.log('Reading a note');
     }
-  )
+  })
   .parse(hideBin(process.argv));
